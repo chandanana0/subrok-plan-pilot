@@ -1,24 +1,308 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>subrok-plan-pilot</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubRok - Take Control of Your Subscriptions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span>SubRok</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+            <button class="get-started-btn" onclick="showAuthModal()">Get Started</button>
+        </div>
+    </nav>
 
-    <meta property="og:title" content="subrok-plan-pilot" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Take Control of Your <span class="highlight">Subscriptions</span></h1>
+                <p>SubRok is your intelligent subscription manager that automatically tracks, monitors, and helps cancel unwanted subscriptions using AI-powered automation.</p>
+                <div class="hero-buttons">
+                    <button class="start-trial-btn" onclick="showAuthModal()">Start Free Trial</button>
+                    <button class="watch-demo-btn">Watch Demo</button>
+                </div>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>No credit card required</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>14-day free trial</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-sidebar">
+                <div class="subscription-card">
+                    <h3>Your Subscriptions</h3>
+                    <div class="subscription-item">
+                        <div class="sub-info">
+                            <div class="sub-icon netflix">N</div>
+                            <div>
+                                <div class="sub-name">Netflix</div>
+                                <div class="sub-status active">Active</div>
+                            </div>
+                        </div>
+                        <div class="sub-price">₹799.99</div>
+                    </div>
+                    <div class="subscription-item">
+                        <div class="sub-info">
+                            <div class="sub-icon spotify">S</div>
+                            <div>
+                                <div class="sub-name">Spotify</div>
+                                <div class="sub-status renewing">Renewing Soon</div>
+                            </div>
+                        </div>
+                        <div class="sub-price">₹499.99</div>
+                    </div>
+                    <div class="subscription-item">
+                        <div class="sub-info">
+                            <div class="sub-icon adobe">A</div>
+                            <div>
+                                <div class="sub-name">Adobe Creative</div>
+                                <div class="sub-status canceling">Cancel Pending</div>
+                            </div>
+                        </div>
+                        <div class="sub-price">₹2,299.99</div>
+                    </div>
+                    <div class="total-spend">
+                        <span class="total-label">Total Monthly Spend</span>
+                        <span class="total-amount">₹3,878.97</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Powerful Features for Smart Subscription Management</h2>
+            <p class="section-subtitle">SubRok combines advanced AI with intuitive design to give you complete control over your subscriptions</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Smart Detection</h3>
+                    <p>Automatically identifies subscriptions from bank transactions, emails, and SMS messages using advanced AI.</p>
+                    <a href="#" class="learn-more">Learn more →</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Renewal Alerts</h3>
+                    <p>Get notified before your subscriptions renew so you can make informed decisions about keeping or canceling.</p>
+                    <a href="#" class="learn-more">Learn more →</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Cancellation</h3>
+                    <p>Our AI handles the cancellation process by filling forms, sending emails, and even navigating websites for you.</p>
+                    <a href="#" class="learn-more">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Additional Features -->
+    <section class="additional-features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Expense Tracking</h3>
+                    <p>Track your subscription spending patterns and get insights on where your money goes each month.</p>
+                    <a href="#" class="learn-more">Learn more →</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Bank-Level Security</h3>
+                    <p>Your financial data is protected with enterprise-grade encryption and security protocols.</p>
+                    <a href="#" class="learn-more">Learn more →</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant Automation</h3>
+                    <p>Set up once and let SubRok work automatically in the background, saving you time and money.</p>
+                    <a href="#" class="learn-more">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How SubRok Works</h2>
+            <p class="section-subtitle">Four simple steps to take complete control of your subscriptions</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Connect Your Accounts</h3>
+                    <p>Securely link your bank accounts, email, and SMS to let SubRok discover your subscriptions.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>AI Detection</h3>
+                    <p>Our intelligent system scans and identifies all your active subscriptions automatically.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Smart Monitoring</h3>
+                    <p>Get alerts before renewals and recommendations for subscriptions you rarely use.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Automated Cancellation</h3>
+                    <p>Let our AI handle the cancellation process through forms, emails, or direct web automation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Take Control?</h2>
+            <p>Join thousands of users who are saving money with SubRok's intelligent subscription management</p>
+            <div class="cta-form">
+                <input type="email" placeholder="Enter your email address" id="emailInput">
+                <button onclick="showAuthModal()">Start Free Trial</button>
+            </div>
+            <p class="cta-disclaimer">No credit card required • 14-day free trial • Cancel anytime</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>SubRok</span>
+                    </div>
+                    <p>Take control of your subscriptions with intelligent automation. Save money, time, and never miss a cancellation again.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#how-it-works">How It Works</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SubRok. All rights reserved. Built with AI-powered automation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAuthModal()">&times;</span>
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" onclick="showLogin()">Login</button>
+                    <button class="auth-tab" onclick="showSignup()">Sign Up</button>
+                </div>
+                
+                <!-- Login Form -->
+                <div id="loginForm" class="auth-form">
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to your SubRok account</p>
+                    <form onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <input type="email" required placeholder="Email address" id="loginEmail">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" required placeholder="Password" id="loginPassword">
+                        </div>
+                        <button type="submit" class="auth-btn">Sign In</button>
+                    </form>
+                    <p class="auth-link">Don't have an account? <a href="#" onclick="showSignup()">Sign up</a></p>
+                </div>
+                
+                <!-- Signup Form -->
+                <div id="signupForm" class="auth-form" style="display: none;">
+                    <h2>Create Account</h2>
+                    <p>Start your free trial today</p>
+                    <form onsubmit="handleSignup(event)">
+                        <div class="form-group">
+                            <input type="text" required placeholder="Full name" id="signupName">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" required placeholder="Email address" id="signupEmail">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" required placeholder="Password" id="signupPassword">
+                        </div>
+                        <button type="submit" class="auth-btn">Create Account</button>
+                    </form>
+                    <p class="auth-link">Already have an account? <a href="#" onclick="showLogin()">Sign in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>

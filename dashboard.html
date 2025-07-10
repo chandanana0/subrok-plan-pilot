@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SubRok</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span>SubRok</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Features</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+            <button class="get-started-btn" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <section class="dashboard-header">
+        <div class="container">
+            <h1>Your Subscription Dashboard</h1>
+            <p>See how SubRok gives you complete visibility and control over all your subscriptions</p>
+        </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-content">
+        <div class="container">
+            <!-- Dashboard Stats -->
+            <div class="dashboard-stats">
+                <div class="stat-card total-card">
+                    <div class="stat-content">
+                        <h3>Your Subscriptions</h3>
+                        <p>Manage all your recurring payments in one place</p>
+                    </div>
+                    <div class="stat-value">
+                        <span class="total-amount">₹<span id="totalAmount">2,040.97</span></span>
+                        <span class="total-label">Monthly Total</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Tabs -->
+            <div class="dashboard-tabs">
+                <button class="tab-btn active" onclick="showTab('overview')">Overview</button>
+                <button class="tab-btn" onclick="showTab('subscriptions')">Subscriptions</button>
+                <button class="tab-btn" onclick="showTab('insights')">Insights</button>
+            </div>
+
+            <!-- Overview Tab -->
+            <div id="overviewTab" class="tab-content active">
+                <div class="overview-grid">
+                    <div class="overview-card active-subs">
+                        <div class="card-header">
+                            <h3 id="activeCount">3</h3>
+                            <p>Active Subscriptions</p>
+                        </div>
+                    </div>
+                    <div class="overview-card monthly-spending">
+                        <div class="card-header">
+                            <h3>₹<span id="monthlySpending">2,040.97</span></h3>
+                            <p>Monthly Spending</p>
+                        </div>
+                    </div>
+                    <div class="overview-card yearly-projection">
+                        <div class="card-header">
+                            <h3>₹<span id="yearlyProjection">24,491.64</span></h3>
+                            <p>Yearly Projection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subscriptions Tab -->
+            <div id="subscriptionsTab" class="tab-content">
+                <div class="subscriptions-header">
+                    <h3>Your Subscriptions</h3>
+                    <button class="add-subscription-btn" onclick="showAddSubscriptionModal()">
+                        <i class="fas fa-plus"></i> Add Subscription
+                    </button>
+                </div>
+                <div class="subscriptions-list" id="subscriptionsList">
+                    <!-- Subscriptions will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Insights Tab -->
+            <div id="insightsTab" class="tab-content">
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <h3>Spending Trends</h3>
+                        <p>Your subscription spending has decreased by 15% this month compared to last month.</p>
+                    </div>
+                    <div class="insight-card">
+                        <h3>Unused Subscriptions</h3>
+                        <p>You haven't used your Dropbox Pro subscription in the last 30 days. Consider canceling to save ₹499/month.</p>
+                    </div>
+                    <div class="insight-card">
+                        <h3>Renewal Alerts</h3>
+                        <p>3 subscriptions are renewing in the next 7 days. Review them to avoid unwanted charges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Subscription Modal -->
+    <div id="addSubscriptionModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddSubscriptionModal()">&times;</span>
+            <div class="add-subscription-form">
+                <h2>Add New Subscription</h2>
+                <form onsubmit="handleAddSubscription(event)">
+                    <div class="form-group">
+                        <label>Subscription Name</label>
+                        <input type="text" required placeholder="e.g., Netflix, Spotify" id="subName">
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="subCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Music">Music</option>
+                            <option value="Software">Software</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Storage">Storage</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Monthly Cost (₹)</label>
+                        <input type="number" required placeholder="0.00" step="0.01" id="subCost">
+                    </div>
+                    <div class="form-group">
+                        <label>Next Billing Date</label>
+                        <input type="date" required id="subBillingDate">
+                    </div>
+                    <button type="submit" class="auth-btn">Add Subscription</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
